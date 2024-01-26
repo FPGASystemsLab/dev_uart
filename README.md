@@ -50,7 +50,14 @@ To cite these UART modules in your research, please use the following BibTeX ent
 ```
 
 ## License
-This project is open source and available under the MIT License. You are free to use, modify, and distribute the code both in private and commercial projects without the need to attribute the original authors.
+This project is open source and available under the MIT License. The license allows you to freely use, modify, and distribute the code in both private and commercial projects. However, it is important to note the following:
+
+- **No Warranty**: The code is provided "as is" without any warranties of any kind, express or implied. The authors and contributors are not liable for any damages or losses that may arise from the use of the code.
+- **No Liability**: In no event shall the authors or contributors be liable for any claim, damages, or other liability, whether in an action of contract, tort, or otherwise, arising from, out of, or in connection with the code or the use or other dealings in the code.
+- **No Attribution Required**: While not required, attribution back to the original authors or the repository is appreciated. However, it is not a condition of the license.
+
+By using this software, you agree to the terms of this license. If you do not agree with these terms, do not use the software.
+
 
 ## Contributing
 Contributions to this project are welcome. Please feel free to fork the repository, make your changes, and submit a pull request.
