@@ -22,8 +22,6 @@ git clone https://github.com/FPGASystemsLab/dev_uart.git
 ## Authors
 - Adam Łuczak - [adam.luczak@outlook.com](mailto:adam.luczak@outlook.com)
 - Jakub S. - [jakusbsiast@gmail.com](mailto:jakusbsiast@gmail.com)
-- Maciej Kurc
-- Jakub Siast - [jsiast@multimedia.edu.pl](mailto:jsiast@multimedia.edu.pl)
 
 ## Citation
 To cite these UART modules in your research, please use the following BibTeX entry:
