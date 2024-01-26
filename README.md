@@ -6,8 +6,15 @@ This repository, part of the FPGASystemsLab organization, hosts the development 
 
 ## Modules Description
 ### Transmit Module (TX)
-The TX module (`uart_tx_box`) handles the transmission of data over UART. It includes an input FIFO for data buffering, a baud rate scaler, and manages the serialization of data bits for transmission.
-
+The TX module (`uart_tx_box`) handles the transmission of data over UART. It includes an input FIFO for data buffering, a baud rate scaler, and manages the serialization of data bits for transmission. The module interfaces with the following signals:
+- `CLK`: System clock signal.
+- `RST`: System reset signal.
+- `I_STB`: Input strobe/control signal indicating new data is ready to be transmitted.
+- `I_DATA`: 8-bit input data to be transmitted.
+- `I_ACK`: Acknowledgment signal indicating data has been successfully buffered.
+- `I_FULL`: Signal indicating the input FIFO is full.
+- `O_TxD`: Serial output data line for UART transmission.
+- `CFG_CLK_DIV`: Configuration input for setting the baud rate divider.
 ### Receive Module (RX)
 The RX module (`uart_rx_box`) is responsible for receiving data over UART. It features an interdomain filter, a baud rate scaler, and manages the deserialization of incoming data bits.
 
