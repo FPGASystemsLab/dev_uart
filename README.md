@@ -17,7 +17,7 @@ The TX module (`uart_tx_box`) handles the transmission of data over UART. It inc
 - `CFG_CLK_DIV`: Configuration input for setting the baud rate divider.
 
 ### Receive Module (RX)
-The RX module (`aser_rx_box`) is responsible for receiving data over UART. It features an interdomain filter, a baud rate scaler, and manages the deserialization of incoming data bits. The module interfaces with the following signals:
+The RX module (`uart_rx_box`) is responsible for receiving data over UART. It features an interdomain filter, a baud rate scaler, and manages the deserialization of incoming data bits. The module interfaces with the following signals:
 - `CLK`: System clock signal.
 - `RST`: System reset signal.
 - `I_RxD`: Serial input data line for UART reception.
