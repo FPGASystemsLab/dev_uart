@@ -6,10 +6,10 @@ This repository, part of the FPGASystemsLab organization, hosts the development 
 
 ## Modules Description
 ### Transmit Module (TX)
-The TX module (`aser_tx_box`) handles the transmission of data over UART. It includes an input FIFO for data buffering, a baud rate scaler, and manages the serialization of data bits for transmission.
+The TX module (`uart_tx_box`) handles the transmission of data over UART. It includes an input FIFO for data buffering, a baud rate scaler, and manages the serialization of data bits for transmission.
 
 ### Receive Module (RX)
-The RX module (`aser_rx_box`) is responsible for receiving data over UART. It features an interdomain filter, a baud rate scaler, and manages the deserialization of incoming data bits.
+The RX module (`uart_rx_box`) is responsible for receiving data over UART. It features an interdomain filter, a baud rate scaler, and manages the deserialization of incoming data bits.
 
 ## Installation and Usage
 To use these UART modules in your project, clone this repository and include the `aser_tx_box` and `aser_rx_box` modules in your FPGA design. Configure the modules according to your system's requirements.
