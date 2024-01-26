@@ -1,14 +1,18 @@
 
-# UART Module for FPGA Systems (dev_uart)
+# UART Modules for FPGA Systems (dev_uart)
 
 ## Overview
-This repository, part of the FPGASystemsLab organization, hosts the development of a UART module for FPGA systems. The UART module, named `soc_uart_box`, is designed to facilitate serial communication in FPGA-based projects.
+This repository, part of the FPGASystemsLab organization, hosts the development of UART modules for FPGA systems, specifically focusing on separate transmit (TX) and receive (RX) functionalities.
 
-## Module Description
-The `soc_uart_box` module includes functionalities for both receiving and transmitting data. It operates with system clock and reset signals, and manages UART communication through Rx and Tx lines. The module is designed with a focus on simplicity and efficiency, suitable for various FPGA applications.
+## Modules Description
+### Transmit Module (TX)
+The TX module (`aser_tx_box`) handles the transmission of data over UART. It includes an input FIFO for data buffering, a baud rate scaler, and manages the serialization of data bits for transmission.
+
+### Receive Module (RX)
+The RX module (`aser_rx_box`) is responsible for receiving data over UART. It features an interdomain filter, a baud rate scaler, and manages the deserialization of incoming data bits.
 
 ## Installation and Usage
-To use this UART module in your project, clone this repository and include the `soc_uart_box` module in your FPGA design. Configure the module according to your system's requirements.
+To use these UART modules in your project, clone this repository and include the `aser_tx_box` and `aser_rx_box` modules in your FPGA design. Configure the modules according to your system's requirements.
 
 ### Cloning the Repository
 ```
@@ -18,15 +22,23 @@ git clone https://github.com/FPGASystemsLab/dev_uart.git
 ## Authors
 - Adam Łuczak - [adam.luczak@outlook.com](mailto:adam.luczak@outlook.com)
 - Jakub S. - [jakusbsiast@gmail.com](mailto:jakusbsiast@gmail.com)
+- Maciej Kurc
+- Jakub Siast - [jsiast@multimedia.edu.pl](mailto:jsiast@multimedia.edu.pl)
 
 ## Citation
-If you use this UART module in your project or research, please cite it as follows:
+To cite these UART modules in your research, please use the following BibTeX entry:
 ```
-Adam Łuczak, Jakub S., "UART Module for FPGA Systems," FPGASystemsLab, 2024.
+@misc{uart_fpgasystemslab,
+  title = {UART Modules for FPGA Systems},
+  author = {Adam Łuczak and Jakub S. and Maciej Kurc and Jakub Siast},
+  year = {2024},
+  publisher = {FPGASystemsLab},
+  howpublished = {\url{https://github.com/FPGASystemsLab/dev_uart}}
+}
 ```
 
 ## License
-This project is open source and available under the MIT License. You are free to use, modify, and distribute the code both in private and commercial projects without the need to attribute the original authors. However, if modifications are made, the source of the original code does not need to be disclosed.
+This project is open source and available under the MIT License. You are free to use, modify, and distribute the code both in private and commercial projects without the need to attribute the original authors.
 
 ## Contributing
 Contributions to this project are welcome. Please feel free to fork the repository, make your changes, and submit a pull request.
