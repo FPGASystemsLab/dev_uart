@@ -28,7 +28,7 @@ To cite these UART modules in your research, please use the following BibTeX ent
 ```
 @misc{uart_fpgasystemslab,
   title = {UART Modules for FPGA Systems},
-  author = {Adam Łuczak and Jakub S. and Maciej Kurc and Jakub Siast},
+  author = {Adam Łuczak and Jakub Siast},
   year = {2024},
   publisher = {FPGASystemsLab},
   howpublished = {\url{https://github.com/FPGASystemsLab/dev_uart}}
