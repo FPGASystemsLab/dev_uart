@@ -15,9 +15,16 @@ The TX module (`uart_tx_box`) handles the transmission of data over UART. It inc
 - `I_FULL`: Signal indicating the input FIFO is full.
 - `O_TxD`: Serial output data line for UART transmission.
 - `CFG_CLK_DIV`: Configuration input for setting the baud rate divider.
-### Receive Module (RX)
-The RX module (`uart_rx_box`) is responsible for receiving data over UART. It features an interdomain filter, a baud rate scaler, and manages the deserialization of incoming data bits.
 
+### Receive Module (RX)
+The RX module (`aser_rx_box`) is responsible for receiving data over UART. It features an interdomain filter, a baud rate scaler, and manages the deserialization of incoming data bits. The module interfaces with the following signals:
+- `CLK`: System clock signal.
+- `RST`: System reset signal.
+- `I_RxD`: Serial input data line for UART reception.
+- `O_STB`: Output strobe/control signal indicating received data is ready.
+- `O_DATA`: 8-bit output data that has been received.
+- `O_ACK`: Acknowledgment signal indicating the received data has been processed.
+- `CFG_CLK_DIV`: Configuration input for setting the baud rate divider.
 ## Installation and Usage
 To use these UART modules in your project, clone this repository and include the `aser_tx_box` and `aser_rx_box` modules in your FPGA design. Configure the modules according to your system's requirements.
 
