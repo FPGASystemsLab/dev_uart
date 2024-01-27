@@ -2,29 +2,31 @@
 # UART Modules for FPGA Systems (dev_uart)
 
 ## Overview
-This repository, part of the FPGASystemsLab organization, hosts the development of UART modules for FPGA systems, specifically focusing on separate transmit (TX) and receive (RX) functionalities.
+This repository contains simple, independent UART transmit (TX) and receive (RX) modules, which can be utilized separately. This design allows for the implementation of multiple serial transmitters or receivers, like 16 serial transmitters or a significant number of receivers to collect incoming data from external devices, using minimal resources. 
+
+The modules feature a 16-byte FIFO queue for both receiving and transmitting data, which smoothens the data flow. The FIFO queue is designed to be efficiently implemented as shift registers (SRLs) in Xilinx FPGAs or as a 16-element memory buffer in Lattice FPGAs. This leads to a compact realization of the module in both cases.
 
 ## Modules Description
 ### Transmit Module (TX)
-The TX module (`uart_tx_box`) handles the transmission of data over UART. It includes an input FIFO for data buffering, a baud rate scaler, and manages the serialization of data bits for transmission. The module interfaces with the following signals:
+The TX module (`serial_tx_box`) handles the transmission of data over UART. It includes a 16-byte FIFO for data buffering, a baud rate scaler, and manages the serialization of data bits for transmission. The module interfaces with the following signals:
 - `CLK`: System clock signal.
 - `RST`: System reset signal.
 - `I_STB`: Input strobe/control signal indicating new data is ready to be transmitted.
 - `I_DATA`: 8-bit input data to be transmitted.
 - `I_ACK`: Acknowledgment signal indicating data has been successfully buffered.
-- `I_FULL`: Signal indicating the input FIFO is full.
 - `O_TxD`: Serial output data line for UART transmission.
-- `CFG_CLK_DIV`: Configuration input for setting the baud rate divider.
+- `CFG_CLK_DIV`: 16-bit configuration input for setting the baud rate divider.
 
 ### Receive Module (RX)
-The RX module (`uart_rx_box`) is responsible for receiving data over UART. It features an interdomain filter, a baud rate scaler, and manages the deserialization of incoming data bits. The module interfaces with the following signals:
+The RX module (`serial_rx_box`) is responsible for receiving data over UART. It features a 16-byte FIFO queue, an interdomain filter, a baud rate scaler, and manages the deserialization of incoming data bits. The module interfaces with the following signals:
 - `CLK`: System clock signal.
 - `RST`: System reset signal.
 - `I_RxD`: Serial input data line for UART reception.
 - `O_STB`: Output strobe/control signal indicating received data is ready.
 - `O_DATA`: 8-bit output data that has been received.
 - `O_ACK`: Acknowledgment signal indicating the received data has been processed.
-- `CFG_CLK_DIV`: Configuration input for setting the baud rate divider.
+- `CFG_CLK_DIV`: 16-bit configuration input for setting the baud rate divider.
+
 ## Installation and Usage
 To use these UART modules in your project, clone this repository and include the `aser_tx_box` and `aser_rx_box` modules in your FPGA design. Configure the modules according to your system's requirements.
 
